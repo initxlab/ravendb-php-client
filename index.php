@@ -1,38 +1,19 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-use RavenDB\Component\Connector;
-use RavenDB\Connector\CurlConnector;
-use RavenDB\Entity\Address;
-use RavenDB\Entity\Company;
-use RavenDB\Annotation\Registry\AnnotationRegistry;
-$config=[
-    "url"=>"http://live-test.ravendb.net/databases?namesOnly=true",
-    "user"=>"username",
-    "password"=>"password"
-];
-$connector = new CurlConnector($config);
-$curl = (new Connector($connector))->getConfig();
-var_dump($connector->connect());
-var_dump($connector->startSession());
-var_dump($curl);
-
-/// ANNOTATIONS ACCESS VIA REGISTRY
-/**
- * GOAL : returning the format object type based on annotations bind to specific Entity/Object
- * Allow formation
-*/
+use RavenDB\Dev\Entity\Address;
+use RavenDB\Dev\Entity\Company;
+use RavenDB\Dev\Annotation\Registry\Registry;
 
 $company = new Company('{}');
 try {
-    $companyFormatScope = new AnnotationRegistry($company);
+    $companyFormatScope = new Registry($company);
     echo $companyFormatScope->getFormatScope().PHP_EOL;
 } catch (ReflectionException $e) {
     // RAVENDB-TASK: implement exception message
 }
-
 $address = new Address('{}');
 try {
-    $addressFormatScope = new AnnotationRegistry($address);
+    $addressFormatScope = new Registry($address);
    echo $addressFormatScope->getFormatScope();
 } catch (ReflectionException $e) {
     // RAVENDB-TASK: implement exception message

@@ -5,11 +5,13 @@
     "require": {
       "php": "^7.4|^8.0",
       "ext-curl": "*",
-      "doctrine/annotations": "^1.11.1"
+      "doctrine/annotations": "^1.11.1",
+      "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
-            "RavenDB\\": "ravendb/src/"
+            "RavenDB\\": "ravendb/src/",
+            "RavenDB\\Migration\\": "ravendb/src_mig/"
         }
     },
     "autoload-dev": {

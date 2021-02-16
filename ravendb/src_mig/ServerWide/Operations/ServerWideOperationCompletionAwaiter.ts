@@ -1,0 +1,18 @@
+import { OperationCompletionAwaiter } from "../../Documents/Operations/OperationCompletionAwaiter";
+import { RavenCommand, IRavenResponse } from "../../Http/RavenCommand";
+import { GetServerWideOperationStateCommand } from "./GetServerWideOperationStateOperation";
+import { RequestExecutor } from "../../Http/RequestExecutor";
+import { DocumentConventions } from "../../Documents/Conventions/DocumentConventions";
+
+export class ServerWideOperationCompletionAwaiter extends OperationCompletionAwaiter {
+
+    public constructor(requestExecutor: RequestExecutor, conventions: DocumentConventions, id: number, nodeTag?: string) {
+        super(requestExecutor, conventions, id);
+
+        this.nodeTag = nodeTag;
+    }
+
+    protected _getOperationStateCommand(conventions: DocumentConventions, id: number, nodeTag?: string): RavenCommand<IRavenResponse> {
+        return new GetServerWideOperationStateCommand(id, nodeTag);
+    }
+}

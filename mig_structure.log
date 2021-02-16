@@ -1,0 +1,75 @@
+src/
+├── Auth
+├── Documents
+│   ├── Attachments
+│   ├── Changes
+│   ├── Commands
+│   │   ├── Batches
+│   │   └── MultiGet
+│   ├── Conventions
+│   ├── Identity
+│   │   └── Commands
+│   ├── Indexes
+│   │   ├── Counters
+│   │   ├── Spatial
+│   │   └── TimeSeries
+│   ├── Operations
+│   │   ├── Attachments
+│   │   ├── Backups
+│   │   ├── CompareExchange
+│   │   ├── Configuration
+│   │   ├── ConnectionStrings
+│   │   ├── Counters
+│   │   ├── Etl
+│   │   │   └── Sql
+│   │   ├── Expiration
+│   │   ├── Identities
+│   │   ├── Indexes
+│   │   ├── OngoingTasks
+│   │   ├── Refresh
+│   │   ├── Replication
+│   │   ├── Revisions
+│   │   ├── Sorters
+│   │   ├── TimeSeries
+│   │   └── TransactionsRecording
+│   ├── Queries
+│   │   ├── Explanation
+│   │   ├── Facets
+│   │   ├── Highlighting
+│   │   ├── MoreLikeThis
+│   │   ├── Sorting
+│   │   ├── Spatial
+│   │   ├── Suggestions
+│   │   ├── TimeSeries
+│   │   └── Timings
+│   ├── Replication
+│   ├── Session
+│   │   ├── Loaders
+│   │   ├── Operations
+│   │   │   └── Lazy
+│   │   ├── TimeSeries
+│   │   └── Tokens
+│   ├── Smuggler
+│   ├── Subscriptions
+│   └── TimeSeries
+├── Exceptions
+├── Http
+├── Mapping
+│   └── Json
+│       ├── Conventions
+│       ├── Docs
+│       └── Streams
+├── Primitives
+├── ServerWide
+│   ├── Commands
+│   │   └── Cluster
+│   ├── Operations
+│   │   ├── Certificates
+│   │   ├── Configuration
+│   │   └── Logs
+│   └── Tcp
+├── Types
+│   └── stream-json
+└── Utility
+
+72 directories
