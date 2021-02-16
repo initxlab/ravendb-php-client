@@ -11,7 +11,7 @@ namespace RavenDB\Client\Http;
  * https://raw.githubusercontent.com/ravendb/ravendb-nodejs-client/v5.0/src/Http/IBroadcast.ts
  * https://raw.githubusercontent.com/ravendb/ravendb-jvm-client/v5.0/src/main/java/net/ravendb/client/http/IBroadcast.java
  */
-class IBroadcast
+interface IBroadcast
 {
 
 }
