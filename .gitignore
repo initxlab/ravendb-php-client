@@ -1,6 +1,4 @@
 /debug-conf-parser.php
-/debug-*
-/mig_*
 /phpunit.*
 /collect.php
 /_migration/
