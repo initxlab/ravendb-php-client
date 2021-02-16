@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '37dd0043cb8e1921d8458d1c170b40fc0fb53097',
     'name' => 'initxlab/ravendb',
   ),
   'versions' => 
@@ -40,12 +40,12 @@
     ),
     'initxlab/ravendb' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '37dd0043cb8e1921d8458d1c170b40fc0fb53097',
     ),
     'myclabs/deep-copy' => 
     array (
@@ -58,8 +58,8 @@
       'reference' => '776f831124e9c62e1a2c601ecc52e776d8bb7220',
       'replaced' => 
       array (
-        0 => '9999999-dev',
-        1 => '1.x-dev',
+        0 => '1.x-dev',
+        1 => '9999999-dev',
       ),
     ),
     'nikic/php-parser' => 
@@ -228,13 +228,12 @@
     ),
     'sebastian/complexity' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => '2.0.2',
+      'version' => '2.0.2.0',
       'aliases' => 
       array (
-        0 => '2.0.x-dev',
       ),
-      'reference' => '6211af7e1ee5a6a1eb9d63476a1792df1dc7544c',
+      'reference' => '739b35e53379900cc9ac327b2147867b8b6efd88',
     ),
     'sebastian/diff' => 
     array (
@@ -278,13 +277,12 @@
     ),
     'sebastian/lines-of-code' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => '1.0.3',
+      'version' => '1.0.3.0',
       'aliases' => 
       array (
-        0 => '1.0.x-dev',
       ),
-      'reference' => 'beb75c546b616306bec9287220cf4e95635709f3',
+      'reference' => 'c1c2e997aa3146983ed888ad08b15470a2e22ecc',
     ),
     'sebastian/object-enumerator' => 
     array (
@@ -338,11 +336,10 @@
     ),
     'sebastian/version' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => '3.0.2',
+      'version' => '3.0.2.0',
       'aliases' => 
       array (
-        0 => '3.0.x-dev',
       ),
       'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
     ),
