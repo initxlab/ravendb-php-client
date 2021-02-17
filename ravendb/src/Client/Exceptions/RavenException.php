@@ -1,10 +1,10 @@
 <?php
-
-
 namespace RavenDB\Client\Exceptions;
-
-
-class RavenException
+/**
+ * Class RavenException
+ * @package RavenDB\Client\Exceptions
+ */
+class RavenException extends \RuntimeException
 {
 
 }

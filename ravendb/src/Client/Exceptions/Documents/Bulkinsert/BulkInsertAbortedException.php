@@ -4,7 +4,9 @@
 namespace RavenDB\Client\Exceptions\Documents\Bulkinsert;
 
 
-class BulkInsertAbortedException
+use RavenDB\Client\Exceptions\RavenException;
+
+class BulkInsertAbortedException extends RavenException
 {
 
 }

@@ -4,7 +4,7 @@
 namespace RavenDB\Client\Exceptions;
 
 
-class ConcurrencyException
+class ConcurrencyException  extends RavenException
 {
 
 }

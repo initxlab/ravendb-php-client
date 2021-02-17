@@ -4,7 +4,9 @@
 namespace RavenDB\Client\Exceptions\Compilation;
 
 
-class CompilationException
+use RavenDB\Client\Exceptions\RavenException;
+
+class CompilationException extends RavenException
 {
 
 }

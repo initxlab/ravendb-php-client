@@ -7,7 +7,5 @@
 .phpunit
 .phpunit.result.cache
 composer.phar
-/migrations/
 /index.php
-/initxlab/
- 
+/config/ravendb.exceptions.json/

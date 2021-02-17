@@ -4,7 +4,9 @@
 namespace RavenDB\Client\Exceptions\Cluster;
 
 
-class NoLeaderException
+use RavenDB\Client\Exceptions\RavenException;
+
+class NoLeaderException extends RavenException
 {
 
 }

@@ -4,7 +4,9 @@
 namespace RavenDB\Client\Exceptions\Database;
 
 
-class DatabaseIdleException
+use RavenDB\Client\Exceptions\RavenException;
+
+class DatabaseIdleException extends RavenException
 {
 
 }

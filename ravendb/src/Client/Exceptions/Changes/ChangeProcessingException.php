@@ -1,10 +1,8 @@
 <?php
-
-
 namespace RavenDB\Client\Exceptions\Changes;
+use RavenDB\Client\Exceptions\RavenException;
 
-
-class ChangeProcessingException
+class ChangeProcessingException extends RavenException
 {
 
 }

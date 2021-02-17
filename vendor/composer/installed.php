@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '37dd0043cb8e1921d8458d1c170b40fc0fb53097',
+    'reference' => 'e7feaf695ad366264a0236c8a89a60be6f73984e',
     'name' => 'initxlab/ravendb',
   ),
   'versions' => 
@@ -45,7 +45,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '37dd0043cb8e1921d8458d1c170b40fc0fb53097',
+      'reference' => 'e7feaf695ad366264a0236c8a89a60be6f73984e',
     ),
     'myclabs/deep-copy' => 
     array (
@@ -58,8 +58,8 @@
       'reference' => '776f831124e9c62e1a2c601ecc52e776d8bb7220',
       'replaced' => 
       array (
-        0 => '1.x-dev',
-        1 => '9999999-dev',
+        0 => '9999999-dev',
+        1 => '1.x-dev',
       ),
     ),
     'nikic/php-parser' => 

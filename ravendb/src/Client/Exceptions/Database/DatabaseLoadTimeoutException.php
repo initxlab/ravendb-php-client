@@ -4,7 +4,9 @@
 namespace RavenDB\Client\Exceptions\Database;
 
 
-class DatabaseLoadTimeoutException
+use RavenDB\Client\Exceptions\RavenException;
+
+class DatabaseLoadTimeoutException extends RavenException
 {
 
 }

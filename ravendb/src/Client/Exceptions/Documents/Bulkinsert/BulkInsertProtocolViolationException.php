@@ -4,7 +4,9 @@
 namespace RavenDB\Client\Exceptions\Documents\Bulkinsert;
 
 
-class BulkInsertProtocolViolationException
+use RavenDB\Client\Exceptions\RavenException;
+
+class BulkInsertProtocolViolationException extends RavenException
 {
 
 }

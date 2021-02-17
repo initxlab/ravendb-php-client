@@ -4,7 +4,9 @@
 namespace RavenDB\Client\Exceptions\Cluster;
 
 
-class CommandExecutionException
+use RavenDB\Client\Exceptions\RavenException;
+
+class CommandExecutionException extends RavenException
 {
 
 }

@@ -4,7 +4,9 @@
 namespace RavenDB\Client\Exceptions\Database;
 
 
-class DatabaseDoesNotExistException
+use RavenDB\Client\Exceptions\RavenException;
+
+class DatabaseDoesNotExistException extends RavenException
 {
 
 }

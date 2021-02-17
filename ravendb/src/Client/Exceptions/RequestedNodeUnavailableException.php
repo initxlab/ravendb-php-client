@@ -4,7 +4,7 @@
 namespace RavenDB\Client\Exceptions;
 
 
-class RequestedNodeUnavailableException
+class RequestedNodeUnavailableException extends RavenException
 {
 
 }

@@ -11,7 +11,7 @@
     "autoload": {
         "psr-4": {
             "RavenDB\\": "ravendb/src/",
-            "RavenDB\\Migration\\": "ravendb/src_mig/"
+            "RavenDB\\Tests\\": "ravendb/tests/"
         }
     },
     "autoload-dev": {

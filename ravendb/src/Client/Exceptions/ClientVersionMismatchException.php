@@ -1,10 +1,7 @@
 <?php
-
-
 namespace RavenDB\Client\Exceptions;
 
-
-class ClientVersionMismatchException
+class ClientVersionMismatchException  extends RavenException
 {
 
 }

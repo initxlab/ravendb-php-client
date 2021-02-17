@@ -4,7 +4,9 @@
 namespace RavenDB\Client\Exceptions\Cluster;
 
 
-class NodeIsPassiveException
+use RavenDB\Client\Exceptions\RavenException;
+
+class NodeIsPassiveException extends RavenException
 {
 
 }

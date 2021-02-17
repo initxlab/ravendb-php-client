@@ -4,7 +4,9 @@
 namespace RavenDB\Client\Exceptions\Database;
 
 
-class DatabaseSchemaErrorException
+use RavenDB\Client\Exceptions\RavenException;
+
+class DatabaseSchemaErrorException extends RavenException
 {
 
 }

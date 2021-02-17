@@ -1,10 +1,6 @@
 <?php
-
-
 namespace RavenDB\Client\Exceptions;
-
-
-class ConflictException
+class ConflictException extends RavenException
 {
 
 }

@@ -4,7 +4,7 @@
 namespace RavenDB\Client\Exceptions;
 
 
-class TimeoutException
+class TimeoutException extends RavenException
 {
 
 }

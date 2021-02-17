@@ -1,10 +1,6 @@
 <?php
-
-
 namespace RavenDB\Client\Exceptions;
-
-
-class BadResponseException
+class BadResponseException  extends RavenException
 {
 
 }

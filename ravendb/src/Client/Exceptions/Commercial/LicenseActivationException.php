@@ -4,7 +4,9 @@
 namespace RavenDB\Client\Exceptions\Commercial;
 
 
-class LicenseActivationException
+use RavenDB\Client\Exceptions\RavenException;
+
+class LicenseActivationException extends RavenException
 {
 
 }

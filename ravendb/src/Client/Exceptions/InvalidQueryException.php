@@ -4,7 +4,7 @@
 namespace RavenDB\Client\Exceptions;
 
 
-class InvalidQueryException
+class InvalidQueryException extends RavenException
 {
 
 }

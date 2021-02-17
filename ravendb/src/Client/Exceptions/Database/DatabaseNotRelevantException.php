@@ -4,7 +4,9 @@
 namespace RavenDB\Client\Exceptions\Database;
 
 
-class DatabaseNotRelevantException
+use RavenDB\Client\Exceptions\RavenException;
+
+class DatabaseNotRelevantException extends RavenException
 {
 
 }
