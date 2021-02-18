@@ -3,24 +3,25 @@
     "description": "RavenDB PHP API Client",
     "type": "project",
     "require": {
-      "php": "^7.4|^8.0",
+      "php": "^8.0",
       "ext-curl": "*",
       "doctrine/annotations": "^1.11.1",
-      "ext-json": "*"
+      "ext-json": "*",
+       "phpdocumentor/reflection-docblock": "^5.2"
     },
     "autoload": {
         "psr-4": {
-            "RavenDB\\": "ravendb/src/",
-            "RavenDB\\Tests\\": "ravendb/tests/"
+            "RavenDB\\": "ravendb/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "RavenDB\\Tests\\": "tests/"
+            "RavenDB\\Tests\\": "ravendb/tests/"
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "symfony/var-dumper": "5.x-dev"
     },
     "license": "MIT",
     "minimum-stability": "dev"

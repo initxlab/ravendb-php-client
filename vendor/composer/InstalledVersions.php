@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'e7feaf695ad366264a0236c8a89a60be6f73984e',
+    'reference' => 'c64f27195c7d7db1d512d3f2f5077f5115f79a9a',
     'name' => 'initxlab/ravendb',
   ),
   'versions' => 
@@ -69,7 +69,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'e7feaf695ad366264a0236c8a89a60be6f73984e',
+      'reference' => 'c64f27195c7d7db1d512d3f2f5077f5115f79a9a',
     ),
     'myclabs/deep-copy' => 
     array (
@@ -376,6 +376,36 @@ private static $installed = array (
         0 => '1.22.x-dev',
       ),
       'reference' => 'c6c942b1ac76c82448322025e084cadc56048b4e',
+    ),
+    'symfony/polyfill-mbstring' => 
+    array (
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
+      'aliases' => 
+      array (
+        0 => '1.22.x-dev',
+      ),
+      'reference' => '5232de97ee3b75b0360528dae24e73db49566ab1',
+    ),
+    'symfony/polyfill-php80' => 
+    array (
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
+      'aliases' => 
+      array (
+        0 => '1.22.x-dev',
+      ),
+      'reference' => 'dc3063ba22c2a1fd2f45ed856374d79114998f91',
+    ),
+    'symfony/var-dumper' => 
+    array (
+      'pretty_version' => '5.x-dev',
+      'version' => '5.9999999.9999999.9999999-dev',
+      'aliases' => 
+      array (
+        0 => '9999999-dev',
+      ),
+      'reference' => '93c1914af9c0619294d867a0fa346d5ea6b7d707',
     ),
     'theseer/tokenizer' => 
     array (
