@@ -7,7 +7,8 @@
       "ext-curl": "*",
       "doctrine/annotations": "^1.11.1",
       "ext-json": "*",
-       "phpdocumentor/reflection-docblock": "^5.2"
+       "phpdocumentor/reflection-docblock": "^5.2",
+      "ext-http": "*"
     },
     "autoload": {
         "psr-4": {
