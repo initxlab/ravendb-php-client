@@ -2,6 +2,7 @@
 namespace RavenDB\Client\Http;
 use CurlHandle;
 use RavenDB\Client\Exceptions\CurlErrException;
+use stdClass;
 
 /**
  * Class CurlCommand
@@ -9,7 +10,7 @@ use RavenDB\Client\Exceptions\CurlErrException;
  */
 class CurlCommand extends RavenCommand
 {
-    private CurlHandle|bool $response;
+    private stdClass|bool $response;
     private string $url;
     private int $headerCode;
 
@@ -23,40 +24,28 @@ class CurlCommand extends RavenCommand
 
     /**
      * Return bool or CurlHandle resource
-     * @return CurlHandle|bool
+     * @return stdClass|bool
      */
-    public function getResponse(): CurlHandle|bool {
+    public function getResponse(): stdClass|bool {
         return $this->response;
     }
 
     /**
      * @param string $path
      * @param array $query
-     * @return CurlHandle|bool
+     * @return stdClass
      */
-    public function createRequest($path="", array $query=[]): CurlHandle|bool {
+    public function createRequest(string $path="", array $query=[]): stdClass {
         $append_query="";
         if( count($query) > 0 ){ $append_query = "?".http_build_query($query); }
-
-        $curl_session = curl_init($this->node->getUrl().$path.$append_query);
+        $url = $this->node->getUrl().$path.$append_query;
+        $curl_session = curl_init($url);
         curl_setopt($curl_session, CURLOPT_HEADER,$this->headerCode);
-        curl_exec($curl_session);
+        curl_setopt($curl_session, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($curl_session);
         curl_close($curl_session);
-        return $this->response = $curl_session;
+        return $this->response = json_decode($response);
     }
-
-   public function curlPutData(array $data=[],string $path=""): bool|string
-   {
-       $ch = curl_init($this->node->getUrl().$path."?".http_build_query($data));
-       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-       curl_setopt($ch, CURLOPT_POSTFIELDS,http_build_query($data));
-       $response = curl_exec($ch);
-       if (!$response) {
-           return false;
-       }
-       return "success";
-   }
 
    public function curlResponseContentType(){
         return $this->getResponse()["content_type"];

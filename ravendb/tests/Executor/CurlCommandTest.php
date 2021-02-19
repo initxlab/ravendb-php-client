@@ -19,6 +19,7 @@ class CurlCommandTest extends TestCase
         $this->resource();
         $this->curlCmd->createRequest(IEnv::ROUTE_DATABASES,[IEnv::QUERY_NAME=>"db1","param"=>"value"]);
         $output = $this->curlCmd->getResponse();
-        $this->assertInstanceOf(\CurlHandle::class,$output);
+        dd($output);
+        $this->assertInstanceOf(\stdClass::class,$output);
     }
 }
