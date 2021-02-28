@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
     'PHPUnit\\Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit\\Framework\\ActualValueIsNotAnObjectException' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/ActualValueIsNotAnObjectException.php',
     'PHPUnit\\Framework\\Assert' => $vendorDir . '/phpunit/phpunit/src/Framework/Assert.php',
@@ -413,6 +414,7 @@ return array(
     'PharIo\\Version\\GreaterThanOrEqualToVersionConstraint' => $vendorDir . '/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php',
     'PharIo\\Version\\InvalidPreReleaseSuffixException' => $vendorDir . '/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php',
     'PharIo\\Version\\InvalidVersionException' => $vendorDir . '/phar-io/version/src/exceptions/InvalidVersionException.php',
+    'PharIo\\Version\\NoPreReleaseSuffixException' => $vendorDir . '/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php',
     'PharIo\\Version\\OrVersionConstraintGroup' => $vendorDir . '/phar-io/version/src/constraints/OrVersionConstraintGroup.php',
     'PharIo\\Version\\PreReleaseSuffix' => $vendorDir . '/phar-io/version/src/PreReleaseSuffix.php',
     'PharIo\\Version\\SpecificMajorAndMinorVersionConstraint' => $vendorDir . '/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php',
