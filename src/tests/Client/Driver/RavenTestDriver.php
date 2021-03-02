@@ -31,11 +31,13 @@ abstract class RavenTestDriver extends TestCase
         }
     }
 
-    protected static function killProcess(Process $p):void {
+    // TODO: IMPLEMENT PROCESS MANAGEMENT LIBRAIRY
+    protected static function killProcess(Process $p): void
+    {
         if ($p != null && $p->isAlive()) {
             self::reportInfo("Kill global server");
             try {
-                $p->destroyForcibly(); // do implement process
+                $p->destroyForcibly();
             } catch (Exception $e) {
                 self::reportError($e);
             }
@@ -43,7 +45,8 @@ abstract class RavenTestDriver extends TestCase
     }
 
     //@SuppressWarnings("EmptyMethod")
-    protected function setupDatabase(IDocumentStore $documentStore): void {
+    protected function setupDatabase(IDocumentStore $documentStore): void
+    {
         // empty
     }
 }
