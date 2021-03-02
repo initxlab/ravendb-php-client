@@ -1,10 +1,8 @@
-/debug-conf-parser.php
 /phpunit.*
 /collect.php
-/_migration/
-/node_modules/
 /bin/.phpunit/
 .phpunit
 .phpunit.result.cache
 composer.phar
 phpunit.xml
+/vendor
