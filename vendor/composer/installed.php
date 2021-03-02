@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '7eae9dbc96786d428bddfb520f6c2c45c669da4d',
+    'reference' => '5539358eefed3066fda40d4ddc3770c9a3ceaf93',
     'name' => 'initxlab/ravendb',
   ),
   'versions' => 
@@ -27,7 +27,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '7eae9dbc96786d428bddfb520f6c2c45c669da4d',
+      'reference' => '5539358eefed3066fda40d4ddc3770c9a3ceaf93',
     ),
     'myclabs/deep-copy' => 
     array (
