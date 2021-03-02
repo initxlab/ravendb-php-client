@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => 'dev-current',
+    'version' => 'dev-current',
     'aliases' => 
     array (
     ),
-    'reference' => '092c6647bf9ee3d5931bd64a1aad8a88b4c25135',
+    'reference' => '7eae9dbc96786d428bddfb520f6c2c45c669da4d',
     'name' => 'initxlab/ravendb',
   ),
   'versions' => 
@@ -22,12 +22,12 @@
     ),
     'initxlab/ravendb' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'dev-current',
+      'version' => 'dev-current',
       'aliases' => 
       array (
       ),
-      'reference' => '092c6647bf9ee3d5931bd64a1aad8a88b4c25135',
+      'reference' => '7eae9dbc96786d428bddfb520f6c2c45c669da4d',
     ),
     'myclabs/deep-copy' => 
     array (
@@ -393,7 +393,7 @@
       array (
         0 => '9999999-dev',
       ),
-      'reference' => '3fc1accc0f5d420389f8c9717aef3c7d99cdacd1',
+      'reference' => 'ecde6bca597c73df1da28d4d9e9f4363670f04b4',
     ),
     'symfony/http-client-contracts' => 
     array (
