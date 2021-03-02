@@ -1,10 +1,7 @@
 <?php
 
-
 namespace RavenDB\Client\Http;
-/**
- * TODO : REMOVE/ CHECK
- */
+
 class RavenCommandResponseType
 {
     const EMPTY = "EMPTY";

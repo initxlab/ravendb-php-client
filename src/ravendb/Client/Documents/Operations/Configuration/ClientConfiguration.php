@@ -7,7 +7,7 @@ use RavenDB\Client\Http\ReadBalanceBehavior;
 
 class ClientConfiguration
 {
-    private Character $identityPartsSeparator;
+    private Character $identityPartsSeparator; // TODO confirm if Charater is in the scope
     private int $etag;
     private bool $disabled;
     private int $maxNumberOfRequestsPerSession;

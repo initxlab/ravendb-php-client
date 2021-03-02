@@ -18,7 +18,7 @@ abstract class RavenCommand
     protected string $selectedNodeTag;
     protected int $numberOfAttempts;
     public const CLIENT_VERSION = "5.0.0";
-    protected \stdClass $result;
+    protected mixed $result;
     public $failoverTopologyEtag = -2;
 
     public abstract function isReadRequest(): bool;
@@ -54,12 +54,12 @@ abstract class RavenCommand
         $this->statusCode = $statusCode;
     }
 
-    public function getResult(): \stdClass
+    public function getResult()
     {
         return $this->result;
     }
 
-    public function setResult(\stdClass $result): void
+    public function setResult(mixed $result): void
     {
         $this->result = $result;
     }
@@ -105,7 +105,7 @@ abstract class RavenCommand
             $this->throwInvalidResponse();
         }
 
-        throw new Exception(" command must override the setResponse method which expects response with the following type: " );
+        throw new Exception(" command must override the setResponse method which expects response with the following type: ");
     }
 
 

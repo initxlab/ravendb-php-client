@@ -1,6 +1,7 @@
 <?php
 
 namespace RavenDB\Client\Http;
+
 class ServerNode
 {
     private string $url;

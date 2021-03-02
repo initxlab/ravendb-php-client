@@ -7,5 +7,4 @@
 .phpunit
 .phpunit.result.cache
 composer.phar
-/index.php
-/config/ravendb.exceptions.json/
+phpunit.xml

@@ -30,4 +30,20 @@ abstract class RavenTestDriver extends TestCase
             throw new \InvalidArgumentException("Exception cannot be null ");
         }
     }
+
+    protected static function killProcess(Process $p):void {
+        if ($p != null && $p->isAlive()) {
+            self::reportInfo("Kill global server");
+            try {
+                $p->destroyForcibly(); // do implement process
+            } catch (Exception $e) {
+                self::reportError($e);
+            }
+        }
+    }
+
+    //@SuppressWarnings("EmptyMethod")
+    protected function setupDatabase(IDocumentStore $documentStore): void {
+        // empty
+    }
 }

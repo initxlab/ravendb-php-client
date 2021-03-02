@@ -1,4 +1,5 @@
 <?php
+
 namespace RavenDB\Client\Documents;
 
 /**
@@ -11,13 +12,15 @@ class DocumentStore extends DocumentStoreBase
 
     /**
      * Constructor
-     * @param string|array $urls
-     * @param string $database
+     * @param string|array|null $urls
+     * @param string|null $database
      */
-    public function __construct(string|array $urls,string $database)
+    public function __construct(string|array $urls = null, ?string $database = null)
     {
         $asUrl = null;
-        if(is_string($urls)) { $asUrl = $urls;}
+        if (is_string($urls)) {
+            $asUrl = $urls;
+        }
 
         $urls = $asUrl ?: $urls;
         $this->setUrls($urls);
@@ -38,18 +41,17 @@ class DocumentStore extends DocumentStoreBase
      */
     public function getIdentifier(): ?string
     {
-        if(null !== $this->identifier){
+        if (null !== $this->identifier) {
             return $this->identifier;
         }
-        if (null === $this->urls){
+        if (null === $this->urls) {
             return null;
         }
 
-        if(null !== $this->database){
-            return implode(',',$this->urls)." (DB: ".$this->database.")";
+        if (null !== $this->database) {
+            return implode(',', $this->urls) . " (DB: " . $this->database . ")";
         }
-
-        return implode(',',$this->urls);
+        return implode(',', $this->urls);
 
     }
 }

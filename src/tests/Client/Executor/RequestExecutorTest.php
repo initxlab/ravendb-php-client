@@ -3,7 +3,6 @@
 namespace RavenDB\Tests\Client\Executor;
 
 use RavenDB\Client\Documents\Conventions\DocumentConventions;
-use RavenDB\Client\Documents\DocumentStore;
 use RavenDB\Client\Http\RequestExecutor;
 use RavenDB\Client\Serverwide\Operations\GetDatabaseNamesOperation;
 use RavenDB\Tests\Client\RemoteTestBase;
@@ -11,28 +10,30 @@ use RavenDB\Tests\Client\RemoteTestBase;
 class RequestExecutorTest extends RemoteTestBase
 {
 
-    public function testCanFetchDatabasesNames()
+    public function testCanFetchDatabasesNames() // TODO: complete dependencies migration
     {
         $conventions = new DocumentConventions();
+        $store = $this->getDocumentStore();
 
         try {
-            $store = new DocumentStore("http://devtool.infra:9095", 'db1');
+            $executor = RequestExecutor::create($store->getUrls(), $store->getDatabase(), null, $conventions);
             try {
-
-                $executor = RequestExecutor::create($store->getUrls(), $store->getDatabase(), '', [], '', null, $conventions);
                 $databaseNamesOperation = new GetDatabaseNamesOperation(0, 20);
                 $command = $databaseNamesOperation->getCommand($conventions);
-                $request = $executor->execute($store, $command);
-                $dbNames = $command->setResponse($request, false);
-                $this->assertIsArray($dbNames);
+                $executor->execute($store, $command);
+                $dbNames = $command->getResult();
+                // TODO: apply utils
                 $isStoreDbName = in_array($store->getDatabase(), $dbNames);
                 $this->assertTrue($isStoreDbName);
-
-            } catch (\Exception $e) {
-                throw new \Exception($e->getMessage());
+                $this->assertThat();
+            } finally {
+                $executor->close();
             }
-        } catch (\Exception $e) {
-            throw new \Exception($e->getMessage());
+        } finally {
+            $store->close();
         }
     }
+
 }
+
+/***/

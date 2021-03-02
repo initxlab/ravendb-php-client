@@ -1,7 +1,8 @@
 <?php
+
 namespace RavenDB\Client\Exceptions\Routing;
 
-class RouteNotFoundException
+class RouteNotFoundException extends \Exception
 {
 
 }
