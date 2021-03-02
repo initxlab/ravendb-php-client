@@ -1,8 +1,6 @@
 /phpunit.*
-/collect.php
 /bin/.phpunit/
 .phpunit
 .phpunit.result.cache
-composer.phar
 phpunit.xml
 /vendor/
