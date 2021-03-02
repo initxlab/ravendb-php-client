@@ -9,8 +9,8 @@ use RavenDB\Tests\Client\RemoteTestBase;
 
 class RequestExecutorTest extends RemoteTestBase
 {
-
-    public function testCanFetchDatabasesNames() // TODO: complete dependencies migration
+    // TODO: TEST RUN PENDING ON THE DEPENDENCIES MIGRATION
+    public function testCanFetchDatabasesNames()
     {
         $conventions = new DocumentConventions();
         $store = $this->getDocumentStore();
@@ -22,7 +22,7 @@ class RequestExecutorTest extends RemoteTestBase
                 $command = $databaseNamesOperation->getCommand($conventions);
                 $executor->execute($store, $command);
                 $dbNames = $command->getResult();
-                // TODO: apply utils
+                // TODO: IMPLEMENT assertAs UTIL FOLLOWING API CONVENTION
                 $isStoreDbName = in_array($store->getDatabase(), $dbNames);
                 $this->assertTrue($isStoreDbName);
                 $this->assertThat();
@@ -35,5 +35,3 @@ class RequestExecutorTest extends RemoteTestBase
     }
 
 }
-
-/***/

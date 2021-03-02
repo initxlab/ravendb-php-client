@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '5539358eefed3066fda40d4ddc3770c9a3ceaf93',
+    'reference' => '97dd0290f2a031a987cd2ae7d3e417e912f5315a',
     'name' => 'initxlab/ravendb',
   ),
   'versions' => 
@@ -51,7 +51,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '5539358eefed3066fda40d4ddc3770c9a3ceaf93',
+      'reference' => '97dd0290f2a031a987cd2ae7d3e417e912f5315a',
     ),
     'myclabs/deep-copy' => 
     array (
@@ -446,16 +446,6 @@ private static $installed = array (
       ),
       'reference' => 'c6c942b1ac76c82448322025e084cadc56048b4e',
     ),
-    'symfony/polyfill-mbstring' => 
-    array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
-      'aliases' => 
-      array (
-        0 => '1.22.x-dev',
-      ),
-      'reference' => '5232de97ee3b75b0360528dae24e73db49566ab1',
-    ),
     'symfony/polyfill-php73' => 
     array (
       'pretty_version' => 'dev-main',
@@ -495,26 +485,6 @@ private static $installed = array (
         0 => '2.4.x-dev',
       ),
       'reference' => 'e830e6ceebd6377b019e4c9a523d6f2c27007e4a',
-    ),
-    'symfony/stopwatch' => 
-    array (
-      'pretty_version' => '5.x-dev',
-      'version' => '5.9999999.9999999.9999999-dev',
-      'aliases' => 
-      array (
-        0 => '9999999-dev',
-      ),
-      'reference' => 'f0302d2c69902b195f6bec61dc0bc52736c38b93',
-    ),
-    'symfony/var-dumper' => 
-    array (
-      'pretty_version' => '5.x-dev',
-      'version' => '5.9999999.9999999.9999999-dev',
-      'aliases' => 
-      array (
-        0 => '9999999-dev',
-      ),
-      'reference' => '898d0e3b20171d9178c0fcd058a76b5698cc804e',
     ),
     'theseer/tokenizer' => 
     array (

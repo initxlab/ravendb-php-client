@@ -14,8 +14,7 @@ abstract class RavenTestDriver extends TestCase
         return $this->disposed;
     }
 
-    // EmptyMethod
-    protected static function reportInfo(string $message)
+    protected static function reportInfo(string $message)  // TODO: MIGRATION SOURCE IS EMPTY AS WELL
     {
 
     }
@@ -31,9 +30,9 @@ abstract class RavenTestDriver extends TestCase
         }
     }
 
-    // TODO: IMPLEMENT PROCESS MANAGEMENT LIBRAIRY
-    protected static function killProcess(Process $p): void
+    protected static function killProcess(Process $p): void // TODO: IMPLEMENT PROCESS MANAGEMENT LIBRAIRY
     {
+
         if ($p != null && $p->isAlive()) {
             self::reportInfo("Kill global server");
             try {
@@ -45,7 +44,7 @@ abstract class RavenTestDriver extends TestCase
     }
 
     //@SuppressWarnings("EmptyMethod")
-    protected function setupDatabase(IDocumentStore $documentStore): void
+    protected function setupDatabase(IDocumentStore $documentStore): void // TODO: MIGRATION SOURCE IS EMPTY AS WELL
     {
         // empty
     }

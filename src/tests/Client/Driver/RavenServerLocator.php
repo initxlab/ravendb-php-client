@@ -25,9 +25,9 @@ class RavenServerLocator
         return $this->getServerPath();
     }
 
-    public function getCommandArguments(): \ArrayObject
+    public function getCommandArguments(): array
     {
-        return new \ArrayObject([0]);
+        return [];
     }
 
     public function getServerCertificatePath(): string
@@ -41,17 +41,3 @@ class RavenServerLocator
     }
 
 }
-
-/*
-
-
-
-
-
-
-
-    public String getServerCertificatePath() {
-        throw new UnsupportedOperationException();
-    }
-
-    public String getServerCaPath() { throw new UnsupportedOperationException(); }*/

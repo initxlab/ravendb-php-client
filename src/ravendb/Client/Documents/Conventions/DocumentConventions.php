@@ -47,7 +47,7 @@ class DocumentConventions
         $this->assertNotFrozen();
         $this->_maxHttpCacheSize = $maxHttpCacheSize;
     }
-
+    // TODO: REFACTO
     public function clone(): DocumentConventions
     {
         $cloned = clone new DocumentConventions();

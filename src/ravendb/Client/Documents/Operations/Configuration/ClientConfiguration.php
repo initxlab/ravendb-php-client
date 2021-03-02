@@ -7,7 +7,7 @@ use RavenDB\Client\Http\ReadBalanceBehavior;
 
 class ClientConfiguration
 {
-    private Character $identityPartsSeparator; // TODO confirm if Charater is in the scope
+    private string $identityPartsSeparator;
     private int $etag;
     private bool $disabled;
     private int $maxNumberOfRequestsPerSession;
@@ -65,13 +65,12 @@ class ClientConfiguration
         $this->loadBalanceBehavior = $loadBalanceBehavior;
     }
 
-    // TODO: To confirm if Character is needed
-    public function getIdentityPartsSeparator(): Character
+    public function getIdentityPartsSeparator(): string
     {
         return $this->identityPartsSeparator;
     }
 
-    public function setIdentityPartsSeparator(Character $identityPartsSeparator): void
+    public function setIdentityPartsSeparator(string $identityPartsSeparator): void
     {
         if (null !== $this->identityPartsSeparator && '|' == $this->identityPartsSeparator) {
             throw new \Exception("Cannot set identity parts separator to '|'");

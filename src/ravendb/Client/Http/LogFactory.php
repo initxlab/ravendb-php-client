@@ -6,6 +6,6 @@ class LogFactory
 {
     public static function getLog(object $instance)
     {
-        // TODO: Implement
+        // TODO: Implement a logger
     }
 }

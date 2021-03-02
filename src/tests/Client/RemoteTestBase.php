@@ -12,15 +12,13 @@ use RavenDB\Tests\Client\Driver\RavenTestDriver;
 
 class RemoteTestBase extends RavenTestDriver implements Closable
 {
-    private static $_index = 0; //     private static final AtomicInteger index = new AtomicInteger();
+    private static $_index = 0;
 
     private static IDocumentStore $documentStore;
     private RavenServerLocator $locator;
     private RavenServerLocator $securedLocator;
-
     private static ?IDocumentStore $globalServer;
     private static ?Process $globalServerProcess;
-    // CAN ACCEPT NULL
     private static ?IDocumentStore $globalSecuredServer;
     private static ?Process $globalSecuredServerProcess;
 
@@ -34,8 +32,9 @@ class RemoteTestBase extends RavenTestDriver implements Closable
         $this->securedLocator = new RavenServerLocator();
     }
 
-    protected function customizeDbRecord(DatabaseRecord $dbRecord): void
+    protected function customizeDbRecord(DatabaseRecord $dbRecord): void // TODO : JVM API MODEL TO MIGRATE
     {
+
     }
 
     private static function getGlobalServer(bool $secured): IDocumentStore
@@ -43,7 +42,7 @@ class RemoteTestBase extends RavenTestDriver implements Closable
         return $secured ? self::$globalSecuredServer : self::$globalServer;
     }
 
-    protected function customizeStore(DocumentStore $store): void
+    protected function customizeStore(DocumentStore $store): void // TODO : JVM API MODEL TO MIGRATE
     {
 
     }
@@ -85,6 +84,7 @@ class RemoteTestBase extends RavenTestDriver implements Closable
             self::$globalServer->close();
             self::$globalServer = null;
         }
+        // TODO MIGRATION STEP linked to Process task
         RavenTestDriver::killProcess($p);
     }
 
@@ -93,14 +93,6 @@ class RemoteTestBase extends RavenTestDriver implements Closable
     {
         $name = $database . "_" . ++self::$_index;
         self::reportInfo("getDocumentStore for db " . $database . ".");
-        /*
-         *  if (self::getGlobalServer(secured) === null) {
-                synchronized (RavenTestDriver::class) {
-                    if (self::getGlobalServer(secured) === null) {
-                        runServer(secured);
-                    }
-                }
-        }*/
         $documentStore = self::getGlobalServer($secured);
         $databaseRecord = new DatabaseRecord();
         $databaseRecord->setDatabaseName($name);
@@ -109,18 +101,16 @@ class RemoteTestBase extends RavenTestDriver implements Closable
 
         $createDatabaseOperation = new CreateDatabaseOperation($databaseRecord);
         $documentStore->maintenance();
-        $documentStore->server(); // TODO MIGRATION : from jvm MaintenanceOperationExecutor
-        $documentStore->send($createDatabaseOperation); // TODO MIGRATION : from jvm ServerOperationExecutor
+        $documentStore->server(); // TODO MIGRATION jvm source MaintenanceOperationExecutor
+        $documentStore->send($createDatabaseOperation); // TODO MIGRATION jvm source ServerOperationExecutor
 
         $store = new DocumentStore();
         $store->setUrls($documentStore->getUrls());
         $store->setDatabase($name);
         $this->customizeStore($store);
         // hookLeakedConnectionCheck(store);
-        $store->initialize(); // TODO IN DOCUMENTSTORE
-        /**
-         * .....
-         */
+        $store->initialize(); // TODO MIGRATION jvm source DocumentStore
+
         $this->setupDatabase($store);
         if ($waitForIndexingTimeout != null) {
             waitForIndexing($store, $name, $waitForIndexingTimeout);

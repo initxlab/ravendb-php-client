@@ -3,7 +3,6 @@
 namespace RavenDB\Tests\Client;
 
 use RavenDB\Client\Http\URL;
-use ArrayObject;
 use RavenDB\Tests\Client\Driver\RavenServerLocator;
 use RavenDB\Tests\Client\Util\System;
 use RavenDB\Tests\Client\Util\StringUtils;
@@ -14,19 +13,18 @@ class TestSecuredServiceLocator extends RavenServerLocator
     public static string $ENV_TEST_CA_PATH = "RAVENDB_JAVA_TEST_CA_PATH";
     public static string $ENV_HTTPS_SERVER_URL = "RAVENDB_JAVA_TEST_HTTPS_SERVER_URL";
 
-    public function getCommandArguments(): ArrayObject
+    public function getCommandArguments():array
     {
         $httpsServerUrl = $this->getHttpsServerUrl();
         try {
             $url = new URL($httpsServerUrl);
             $host = $url->getHost();
             $tcpServerUrl = "tcp://" . $host . ":38882";
-
-            return new ArrayObject([
+            return [
                 "--Security.Certificate.Path=" . $this->getServerCertificatePath(),
                 "--ServerUrl=" . $httpsServerUrl,
                 "--ServerUrl.Tcp=" . $tcpServerUrl
-            ]);
+            ];
         } catch (MalformedURLException $e) {
             throw new RuntimeException($e);
         }

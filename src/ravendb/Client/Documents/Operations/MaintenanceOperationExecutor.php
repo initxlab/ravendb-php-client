@@ -28,7 +28,7 @@ class MaintenanceOperationExecutor
             return $this->requestExecutor;
         }
 
-        // $this->requestExecutor = $this->databaseName !== null ? $this->store->getRequestExecutor($this->databaseName) : null;
+        //TODO: $this->requestExecutor = $this->databaseName !== null ? $this->store->getRequestExecutor($this->databaseName) : null;
         return $this->requestExecutor;
     }
 
@@ -57,16 +57,3 @@ class MaintenanceOperationExecutor
         }
     }
 }
-/*
- *
- * public function send(IVoidMaintenanceOperation operation): void {
-        $this->assertDatabaseNameSet();
-        VoidRavenCommand command = $operation->getCommand($this->getRequestExecutor().getConventions());
-        getRequestExecutor().execute(command);
-    }
-
-
-
-
-
-*/

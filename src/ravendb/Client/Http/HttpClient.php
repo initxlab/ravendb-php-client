@@ -3,7 +3,6 @@
 namespace RavenDB\Client\Http;
 
 use Symfony\Component\HttpClient\CurlHttpClient;
-use Symfony\Component\HttpClient\NativeHttpClient;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
@@ -13,12 +12,10 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 class HttpClient
 {
     private $curlClient;
-    private $phpClient;
 
     public function __construct()
     {
         $this->curlClient = new CurlHttpClient();
-        $this->phpClient = new NativeHttpClient();
     }
 
     public function curlRequest(string $url, string $method = "GET"): string

@@ -45,10 +45,6 @@ abstract class RavenCommand
         return $this->timeout;
     }
 
-    public function getDefaultTimeout()
-    {
-    }
-
     public function setStatusCode(int $statusCode): void
     {
         $this->statusCode = $statusCode;

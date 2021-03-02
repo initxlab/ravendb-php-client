@@ -10,7 +10,6 @@ use RavenDB\Client\Primitives\Closable;
 
 class RequestExecutor implements Closable
 {
-    private object $client;
     private AuthOptions $authOptions;
     private string $_databaseName;
     private Date $_lastReturnedResponse;
@@ -26,10 +25,8 @@ class RequestExecutor implements Closable
     private Semaphore $_updateClientConfigurationSemaphore;
     private Log $logger;
     private HttpCache $cache;
-    private ServerNode $_topologyTakenFromNode;
     public ThreadLocal $aggressiveCaching;
     protected NodeSelector $_nodeSelector;  // TODO: CHECK FOR IMPORT
-    public AtomicLong $numberOfServerRequests;
     private static int $INITIAL_TOPOLOGY_ETAG = -2;
     public static ?Consumer $configureHttpClient = null;
     private CloseableHttpClient $_httpClient;
@@ -54,7 +51,6 @@ class RequestExecutor implements Closable
         $this->_defaultTimeout = $conventions->getRequestTimeout();
         $this->_secondBroadcastAttemptTimeout = $conventions->getSecondBroadcastAttemptTimeout();
         $this->_firstBroadcastAttemptTimeout = $conventions->getFirstBroadcastAttemptTimeout();
-        // $this->client = new HttpClient();
     }
 
     public static function getBackwardCompatibilityFailureCheckOperation(): GetStatisticsOperation
@@ -79,17 +75,17 @@ class RequestExecutor implements Closable
 
     private static function getLogger(): Log
     {
-        //return LogFactory::getLog(RequestExecutor::class);  // TODO: To import -- to keep find a secure package for logger
+        //return LogFactory::getLog(RequestExecutor::class);  // TODO : Import a secure package for logging
     }
 
-    public function getCache(): HttpCache   // TODO : WAIT FOR GO
+    public function getCache(): HttpCache   // TODO MIGRATION : wait on go
     {
         return $this->cache;
     }
 
     public function getTopology(): ?Topology
     {
-        return $this->_nodeSelector !== null ? $this->_nodeSelector->getTopology() : null; //TODO : WAIT ON GO
+        return $this->_nodeSelector !== null ? $this->_nodeSelector->getTopology() : null; //TODO MIGRATION : wait on go
     }
 
     public function getHttpClient(): CloseableHttpClient
@@ -129,6 +125,7 @@ class RequestExecutor implements Closable
     public static function createForSingleNodeWithConfigurationUpdates(string|array $initialUrls, string $databaseName, AuthOptions $authOptions, DocumentConventions $conventions): self
     {
         $executor = new createForSingleNodeWithoutConfigurationUpdates($databaseName, $authOptions, $conventions, $initialUrls);
+        // TODO MIGRATION TO COMPLETE FROM JVM SOURCE
     }
 
     public function getSecondBroadcastAttemptTimeout(): int
@@ -150,6 +147,7 @@ class RequestExecutor implements Closable
 
     public function close()
     {
+        // no instructions yet to setup a content here
     }
 
     public function getLastServerVersion(): string
